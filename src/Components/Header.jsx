@@ -17,9 +17,9 @@ function Header() {
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="/productos"><p className="text-white fs-5">Productos</p></a>
         </li>
-        {/* <li className="nav-item">
+        <li className="nav-item">
         <a className="nav-link active" aria-current="page" href="/proveedores"><p className="text-white fs-5">Proveedores</p></a>
-        </li> */}
+        </li>
         <li className="nav-item">
         <a className="nav-link active" aria-current="page" href=""><p className="text-white fs-5"></p></a>
         </li>
