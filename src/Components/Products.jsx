@@ -27,7 +27,7 @@ function Products() {
       <div className="row">
         {data &&
           data.map((e, index) => (
-            <div className="col" key={index}>
+            <div className="col-4" key={index}>
               <ProductCard
                 title={e.name}
                 descrip={e.descripcion}

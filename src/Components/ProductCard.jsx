@@ -95,6 +95,13 @@ function ProductCard(props) {
 
 
 
+  const [showFullDescription, setShowFullDescription] = useState(false);
+  const { descrip } = props;
+
+  const toggleDescription = () => {
+    setShowFullDescription(!showFullDescription);
+  };
+
 
 
   function createProduct() {
@@ -130,6 +137,7 @@ function ProductCard(props) {
     try {
       const response = await axios.delete(`https://localhost:7051/api/${props.id}`);
       console.log(response.data);
+      window.location.reload();
     } catch (error) {
       console.error(error);
     }
@@ -154,7 +162,12 @@ function ProductCard(props) {
       <div className="card-body">
         <h5 className="card-title">{ props.title }</h5>
         <p className="card-text">
-        { props.descrip }
+          {showFullDescription ? descrip : `${descrip.slice(0, 10)}...`}
+          {descrip.length >= 10 && (
+            <button className="btn-link" onClick={toggleDescription}>
+              {showFullDescription ? 'Ver menos' : 'Ver más'}
+            </button>
+          )}
         </p>
         <Text title={ "CODIGO" } text={ props.codigo }/>
         <Text title={ "PRECIO" } text={ props.precio }/>

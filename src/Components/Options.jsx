@@ -102,7 +102,10 @@ function Options() {
       }
     };
 
-    fetchData();
+    fetchData()
+    .then(e => {
+      window.location.reload();
+    })
   }
   return (
     <>
